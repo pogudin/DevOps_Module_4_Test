@@ -20,7 +20,7 @@ jobs:
           options: "--check --diff"
           src: "."
       - name: Run Bandit Scanner
-        uses: reactive-firewall/python-bandit-scan@2.3
+        uses: reactive-firewall/python-bandit-scan@latest
         with:
           path: "."
           level: high
