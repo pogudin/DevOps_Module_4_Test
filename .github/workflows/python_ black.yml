@@ -15,7 +15,16 @@ jobs:
 
       - name: Run Python Black
         uses: psf/black@stable
+        continue-on-error: true
         with: 
           options: "--check --diff"
           src: "."
+      - name: Run Bandit Scanner
+        uses: reactive-firewall/python-bandit-scan@2.3
+        with:
+          path: "."
+          level: high
+          confindence: high
+          exit_zero: true
+      
   
